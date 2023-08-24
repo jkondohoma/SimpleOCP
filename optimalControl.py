@@ -10,6 +10,7 @@ chapter 11: Differential Algebraic Equations
 from pyomo.environ import *
 from pyomo.dae import *
 import matplotlib.pyplot as plt
+import time
 
 model = m = ConcreteModel()
 
@@ -58,7 +59,13 @@ m.init_conditions = ConstraintList(rule=_init)
 TransformationFactory('dae.collocation').apply_to(m, nfe=7, ncp=6,
                                                   scheme='LAGRANGE-RADAU' )
 # Solve algebraic model
-results = SolverFactory('ipopt').solve(m)
+start = time.time()
+results = SolverFactory('glpk').solve(m)
+end = time.time()
+print(" Execution time: ")
+print(end - start)
+
+
 def plotter(subplot, x, *series, **kwds):
     plt.subplot(subplot)
     for i,y in enumerate(series):

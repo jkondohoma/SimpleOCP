@@ -1,3 +1,5 @@
+Execution time: 
+0.14954304695129395
 Print values for variables
 u[0] -0.4974969062889139
 u[0.005687] 13.792946704601896
@@ -318,7 +320,7 @@ Solver:
   Termination condition: optimal
   Id: 0
   Error rc: 0
-  Time: 0.0980370044708252
+  Time: 0.1316521167755127
 Solution: 
 - number of solutions: 0
   number of solutions displayed: 0
