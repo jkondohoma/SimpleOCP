@@ -73,7 +73,7 @@ def plotter(subplot, x, *series, **kwds):
     plt.title(kwds.get('title',''))
     plt.legend(tuple(y.cname() for y in series))
     plt.xlabel(x.cname())
-import matplotlib.pyplot as plt
+
 plotter(121, m.t, m.x1, m.x2, m.x3,  title='Differential Variables')
 plotter(122, m.t, m.u, title='Control Variable', points='o')
 plt.show()
